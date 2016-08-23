@@ -3,7 +3,7 @@ import List from './List'
 import Input from './Input'
 import logo from './logo.svg'
 
-const TOKEN = 'illustriousvoyage'
+const TOKEN = 'mikes'
 
 class App extends Component {
 
@@ -15,10 +15,20 @@ class App extends Component {
     }
   }
 
+  componentDidMount() {
+    fetch(`https://one-list-api.herokuapp.com/items?access_token=${TOKEN}`)
+    .then((response) => { return response.json() })
+    .then((data) => {
+      const apiListItems = data
+      this.setState({
+        listItems: apiListItems
+      })
+    })
+  }
+
   // add the new list text from Input to the state listItems
   addToList = (newListText) => {
     const newListItems = this.state.listItems
-
     // REPLACE this:
     //   newListItems.push({ text: newListText, complete: false })
     //   this.setState({ listItems: newListItems })
@@ -45,16 +55,35 @@ class App extends Component {
   completeItem = (index) => {
     const newListItems = this.state.listItems
     newListItems[index].complete = !newListItems[index].complete
-    this.setState({
-      listItems: newListItems
+    const itemId = newListItems[index].id
+    fetch(`https://one-list-api.herokuapp.com/items/${itemId}?access_token=${TOKEN}`, {
+      method: 'PUT',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        item: {
+          complete: newListItems[index].complete
+        }
+      })
+    })
+    .then(() => {
+      this.setState({
+        listItems: newListItems
+      })
     })
   }
 
   removeItem = (index) => {
     const newListItems = this.state.listItems
-    newListItems.splice(index, 1)
-    this.setState({
-      listItems: newListItems
+    const itemId = newListItems[index].id
+    fetch(`https://one-list-api.herokuapp.com/items/${itemId}?access_token=${TOKEN}`, {
+      method: 'DELETE',
+      headers: { 'Content-Type': 'application/json' },
+    })
+    .then(() => {
+      newListItems.splice(index, 1)
+      this.setState({
+        listItems: newListItems
+      })
     })
   }
 

@@ -2,7 +2,8 @@ import React, { Component } from 'react'
 import Item from './Item'
 
 class List extends Component {
-
+ // take item list and use array map to build each item and send to Item,
+ // with props from App and create unordered list
   render () {
     const items = this.props.items.map((item, index) => {
       return <Item
