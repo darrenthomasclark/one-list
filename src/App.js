@@ -91,7 +91,7 @@ class App extends Component {
     return (
       <div className='App'>
         <header>
-          <h1>One List</h1>
+          <h1>Postit<sup>®</sup> Poster</h1>
         </header>
         <main>
           <List
@@ -99,10 +99,12 @@ class App extends Component {
             completeItem={this.completeItem}
             removeItem={this.removeItem} />
           <Input onAddToList={this.addToList}/>
+          <div className="instructions">Single Click: Mark as Complete</div>
+          <div className="instructions">Double Click: Remove Post</div>
         </main>
         <footer>
           <p><img src={logo} height="42" alt="React"/></p>
-          <p>&copy; 2016 Pickles of Awesome.</p>
+          <p><mark>&copy; 2016 OneList.io. All Rights Reserved.</mark></p>
         </footer>
       </div>
     )

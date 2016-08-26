@@ -5,10 +5,14 @@ html {
 body {
   margin: 0;
   padding: 0;
-  color: #fff;
-  font-family: "Comfortaa";
+  color: black;
+  font-family: "Sacramento";
   font-size: 24px;
-  background-color: #309869;
+  background-color: #b6996f;
+  background-image: url(/src/images/background1.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 100vh;
 }
 
 .App {
@@ -20,38 +24,50 @@ body {
 
 h1 {
   font-weight: 300;
-  text-transform: uppercase;
+  color: #b6996f;
+  font-family: 'Pacifico', cursive;
+  margin-bottom: 0;
+  text-shadow: 2px 2px 4px #000000;
+
 }
 
 main {
   flex: 1;
+  padding: 20px 40px 20px 40px;
+  background-color: #fceaa8;
+  margin-bottom: 30px;
+  -webkit-box-shadow: 0 10px 6px -6px black;
+  -moz-box-shadow: 0 10px 6px -6px black;
+  box-shadow: 0 10px 6px -6px black;
 }
 
 form input {
-  border: none;
+  border: dashed 1px gray;
   padding: 0.3em 0.2em 0;
   width: 100%;
   color: #074863;
   font-size: 1em;
   line-height: 1.5em;
   background-color: #fff;
-  opacity: 0.5;
+  opacity: 0.25;
 }
 
 form input:focus {
   outline: 0;
-  background-color: #fff;
   opacity: 1;
+  border: dashed 1px gray;
 }
 
 ul.one-list {
   padding: 0;
   list-style: none;
+  margin-top: 0;
 }
 
 ul.one-list,
 input {
-  font-family: "Neucha", cursive;
+  font-family: "Sacramento", cursive;
+  font-size: 30px;
 }
 
 ul.one-list li {
@@ -81,6 +97,12 @@ footer {
   text-align: center;
 }
 
+footer p {
+  font-size: 0.5em;
+  font-family: sans-serif;
+  color: white;
+}
+
 footer img {
   vertical-align: middle;
   animation: spin infinite 10s linear;
@@ -89,4 +111,15 @@ footer img {
 @keyframes spin {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
+}
+
+mark {
+    background-color: #b6996f;
+    color: black;
+    padding: 3px;
+}
+
+.instructions {
+  font-size: 0.25em;
+  margin-top: 0.5em;
 }
