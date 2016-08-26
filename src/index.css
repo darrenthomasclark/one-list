@@ -39,6 +39,7 @@ main {
   -webkit-box-shadow: 0 10px 6px -6px black;
   -moz-box-shadow: 0 10px 6px -6px black;
   box-shadow: 0 10px 6px -6px black;
+  height: 50vh;
 }
 
 form input {
@@ -71,7 +72,6 @@ input {
 }
 
 ul.one-list li {
-  margin: 0.2em;
 }
 
 ul.one-list li,
@@ -108,18 +108,29 @@ footer img {
   animation: spin infinite 10s linear;
 }
 
-@keyframes spin {
+/*@keyframes spin {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
-}
+}*/
 
 mark {
     background-color: #b6996f;
-    color: black;
+    color: #53565a;
     padding: 3px;
 }
 
 .instructions {
-  font-size: 0.25em;
-  margin-top: 0.5em;
+  font-size: 0.4em;
+  margin-top: 1em;
+  color: gray;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 200;
+}
+
+.instructions2 {
+  font-size: 0.4em;
+  margin-top: 0.2em;
+  color: gray;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 200;
 }

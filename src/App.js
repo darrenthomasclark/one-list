@@ -3,7 +3,7 @@ import List from './List'
 import Input from './Input'
 import logo from './logo.svg'
 
-const TOKEN = 'mikes'
+const TOKEN = 'DarrenToken'
 
 class App extends Component {
 
@@ -99,11 +99,10 @@ class App extends Component {
             completeItem={this.completeItem}
             removeItem={this.removeItem} />
           <Input onAddToList={this.addToList}/>
-          <div className="instructions">Single Click: Mark as Complete</div>
-          <div className="instructions">Double Click: Remove Post</div>
+          <div className="instructions"><strong>Single Click:</strong> Mark as Complete </div>  <div className="instructions2"><strong>Double Click:</strong> Remove Post</div>
         </main>
         <footer>
-          <p><img src={logo} height="42" alt="React"/></p>
+          <p><img src={logo} height="21" alt="React"/></p>
           <p><mark>&copy; 2016 OneList.io. All Rights Reserved.</mark></p>
         </footer>
       </div>
