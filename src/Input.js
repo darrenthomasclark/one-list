@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 
 class Input extends Component {
+
+// Mike gave me his code so I can review all of this in a marked up state. I semi-understand it and it'd be fun to try and explain it all based on what was provided to me along with the herokuapp page.
  // text is null for input field to begin
   constructor () {
     super()

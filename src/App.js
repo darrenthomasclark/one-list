@@ -2,8 +2,8 @@ import React, { Component } from 'react'
 import List from './List'
 import Input from './Input'
 import logo from './logo.svg'
+let TOKEN = 'DarrenToken'
 
-const TOKEN = 'DarrenToken'
 
 class App extends Component {
 
@@ -14,7 +14,7 @@ class App extends Component {
       ]
     }
   }
-
+// This is the API Pull using the fetch command. My token is being pulled from the top of this document. I defined it as DarrenToken. Every instance of TOKEN in the code is refencing that deinition. It is being told to return jason information (line 20).
   componentDidMount() {
     fetch(`https://one-list-api.herokuapp.com/items?access_token=${TOKEN}`)
     .then((response) => { return response.json() })
@@ -25,15 +25,9 @@ class App extends Component {
       })
     })
   }
-
-  // add the new list text from Input to the state listItems
   addToList = (newListText) => {
     const newListItems = this.state.listItems
-    // REPLACE this:
-    //   newListItems.push({ text: newListText, complete: false })
-    //   this.setState({ listItems: newListItems })
-    //
-    // WITH this:
+  // This is the api config items pulled from heroku. Stringify seems to be turning the json into JS or vice versa. Seems to be maybe checking api for current data to diplay.
     fetch(`https://one-list-api.herokuapp.com/items?access_token=${TOKEN}`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
@@ -51,7 +45,7 @@ class App extends Component {
       })
     })
   }
-
+//Function adds item has been added to list.
   completeItem = (index) => {
     const newListItems = this.state.listItems
     newListItems[index].complete = !newListItems[index].complete
@@ -71,7 +65,7 @@ class App extends Component {
       })
     })
   }
-
+//Function removes item upon doubleclick.
   removeItem = (index) => {
     const newListItems = this.state.listItems
     const itemId = newListItems[index].id
@@ -86,7 +80,7 @@ class App extends Component {
       })
     })
   }
-
+// Begin standard JSX content to be displayed.
   render () {
     return (
       <div className='App'>
@@ -99,7 +93,8 @@ class App extends Component {
             completeItem={this.completeItem}
             removeItem={this.removeItem} />
           <Input onAddToList={this.addToList}/>
-          <div className="instructions"><strong>Single Click:</strong> Mark as Complete </div>  <div className="instructions2"><strong>Double Click:</strong> Remove Post</div>
+          <div className="instructions">Enter a list item above.</div>
+          <div className="instructions2"><strong>Single Click:</strong> Mark as Complete </div>  <div className="instructions2"><strong>Double Click:</strong> Remove Post</div>
         </main>
         <footer>
           <p><img src={logo} height="21" alt="React"/></p>

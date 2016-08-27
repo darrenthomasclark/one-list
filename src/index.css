@@ -9,10 +9,10 @@ body {
   font-family: "Sacramento";
   font-size: 24px;
   background-color: #b6996f;
-  background-image: url(/src/images/background1.jpg);
+  background-image: url(https://i.imgsafe.org/0d06a8c87b.jpg);
   background-size: cover;
   background-repeat: no-repeat;
-  height: 100vh;
+  height: 100%;
 }
 
 .App {
@@ -32,14 +32,13 @@ h1 {
 }
 
 main {
-  flex: 1;
+  /*flex: 1;*/
   padding: 20px 40px 20px 40px;
   background-color: #fceaa8;
   margin-bottom: 30px;
   -webkit-box-shadow: 0 10px 6px -6px black;
   -moz-box-shadow: 0 10px 6px -6px black;
   box-shadow: 0 10px 6px -6px black;
-  height: 50vh;
 }
 
 form input {
@@ -69,9 +68,6 @@ ul.one-list,
 input {
   font-family: "Sacramento", cursive;
   font-size: 30px;
-}
-
-ul.one-list li {
 }
 
 ul.one-list li,
@@ -108,11 +104,6 @@ footer img {
   animation: spin infinite 10s linear;
 }
 
-/*@keyframes spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
-}*/
-
 mark {
     background-color: #b6996f;
     color: #53565a;
@@ -120,7 +111,7 @@ mark {
 }
 
 .instructions {
-  font-size: 0.4em;
+  font-size: 0.7em;
   margin-top: 1em;
   color: gray;
   font-family: 'Open Sans', sans-serif;
